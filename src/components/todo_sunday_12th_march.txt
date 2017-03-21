@@ -1,0 +1,37 @@
+
+— clothes 20 min refresh (not underwear or socks)
+- put away sheets etc
+- wash up while listening to podcast
+- tidy up while listening to podcast
+- shower
+- phone bank
+
+
+
+
+
+- laundry
+
+- wash up
+
+- shower
+
+- gardening
+
+- phone bank (money transfer for Fee; money transfer for student loan)
+
+- more react tutorials
+
+- tidy up (?)
+
+
+
+
+
+Tried to generate security code so that i could do a money transfer: it kept telling me that the security code 6 digits were incorrect even though I definitely typed them correctly.
+
+Then when I went back to the main app screen it told me that my digital secure password was incorrect even though I don't remember changing it recently. 
+
+Then when it asked me my 2 security questions to change the secure password, it told me the answers were wrong but I can't remember setting up those questions so can't remember what i said. 
+
+The app told me to follow the instructions on the web login page, so I did that. It gave me the error reference TSN_0001
