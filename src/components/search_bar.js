@@ -41,16 +41,12 @@ class SearchBar extends Component {
 		);
 	};
 
-	// I keep switching between 'term' and 'keyword' which is
-	// not great practise but for now it helps me to see
-	// what I'm doing a bit better.
-
 	// This method sets the state of this SearchBar component,
 	// and also calls back to the property onSearchTermChange,
 	// which in turn calls the app's method "performVideoSearch"
-	onInputChange(keyword){
-		this.setState( {keyword} );
-		this.props.onSearchTermChange(keyword);
+	onInputChange(term){
+		this.setState( {term} );
+		this.props.onSearchTermChange(term);
 	};
 
 }

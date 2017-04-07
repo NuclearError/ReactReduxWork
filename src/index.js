@@ -1,3 +1,4 @@
+import _ from 'lodash'; // npm install --save lodash
 import React, {Component} from 'react';
 import ReactDOM from 'react-dom';
 import YTSearch from 'youtube-api-search';
@@ -33,12 +34,12 @@ class App extends Component {
 			selectedVideo: null
 		};
 
-		this.performVideoSearch('dressmaking leggings');
+		this.performVideoSearch('leggings sewing');
 	};
 
 	// Youtube API search is now contained in its own method
-	performVideoSearch(keyword) {
-		YTSearch( {key: API_KEY, term: keyword}, (videos) => {
+	performVideoSearch(term) {
+		YTSearch( {key: API_KEY, term: term}, (videos) => {
 			this.setState({
 				videos: videos,
 				selectedVideo: videos[0]
@@ -49,9 +50,16 @@ class App extends Component {
 	// SearchBar has the property 'onSearchTermChange' which we can call back
 	// to when the input change event fires
 	render() {
+
+		// inner function wrapped inside a debounce method (using lodash)
+		// - this function won't call until 300ms have elapsed, no matter how many times it is called
+		const throttledVideoSearch = _.debounce( (term) => { this.performVideoSearch(term), 300 });
+
 		return (
+			// 'onSearchTermChange' can be called as often as possible, but will
+			// still only run every 300ms
 			<section>
-				<SearchBar onSearchTermChange={term => this.performVideoSearch(term)} />
+				<SearchBar onSearchTermChange={throttledVideoSearch} />
 				<VideoDetail video={this.state.selectedVideo} />
 				<VideoList
 					onVideoSelect={ selectedVideo => this.setState({selectedVideo}) }

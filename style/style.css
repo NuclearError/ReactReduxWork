@@ -33,3 +33,17 @@
 .video-container {
   margin: 0 0 15px;
 }
+
+.video-list.media {
+  cursor: pointer;
+}
+
+.video-list.media:hover,
+.video-list.media:focus {
+  padding: 15px;
+  background-color: #efefef;
+}
+
+.list-group-item {
+  padding: 0;
+}
