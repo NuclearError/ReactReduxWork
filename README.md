@@ -2,6 +2,7 @@
 
 This repo contains work that has been done while following along the React-Redux tutorial provided by Stephen Grider on the Udemy platform. The original readme for Stephen Grider's tutorial repo is below.
 
+NB. In the case that port 8080 is in use, edit the webpack dev server config file to use a different port: `node_modules\webpack-dev-server\bin\webpack-dev-server.js`
 
 ----------------------------------------------------------------------------------------------------
 
