@@ -13,6 +13,4 @@ ReactDOM.render(
   </Provider>
   , document.querySelector('.container'));
 
-console.log("Index.js is ok");
-
 //ReactDOM.render( <App />, document.querySelector('.container') );
