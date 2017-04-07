@@ -4,3 +4,12 @@
   padding: 15px;
   border: 1px solid purple;
 }
+
+.book-list__item {
+  cursor: pointer;
+}
+
+.book-list__item:hover,
+.book-list__item:focus {
+  background-color: #efefef;
+}
