@@ -6,7 +6,7 @@ import BookDetail from '../containers/book-detail';
 export default class App extends Component {
   render() {
     return (
-      <section className='book-list__container col-sm-4'>
+      <section className='book-list__container'>
         <BookList />
         <BookDetail />
       </section>

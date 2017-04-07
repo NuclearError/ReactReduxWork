@@ -13,3 +13,13 @@
 .book-list__item:focus {
   background-color: #efefef;
 }
+
+.book-detail {
+  margin: 15px 0 0;
+  color: purple;
+}
+
+.book-detail > p {
+  margin: 0;
+  padding: 0;
+}
