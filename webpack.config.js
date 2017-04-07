@@ -20,6 +20,9 @@ module.exports = {
     extensions: ['', '.js', '.jsx']
   },
   devServer: {
+    proxy: {
+      "**": "http://localhost:9090"
+    },
     historyApiFallback: true,
     contentBase: './'
   }
