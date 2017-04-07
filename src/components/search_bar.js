@@ -12,32 +12,47 @@ const SearchBar = () => {
 // Class-based component
 class SearchBar extends Component {
 
-	// Only class-based components have states 
+	// Only class-based components have states
 	// (functional components do not).
 	// Constructor function is reserved for initialising the class.
 	constructor(props) {
 		super(props);
-		
+
 		// 'CREATE' the state (only do this in the constructor)
 		// ie. Only do 'this.state =' in constructor methods
 		this.state = {
 			term: ''
 		};
 	};
-	
+
 	// every react component class needs a render method
 	render() {
 		return(
-			<div>
-				<input 
+			<section className='search-bar'>
+				<label>Search</label>
+				<input
 					value = {this.state.term}
-					onChange={ event => this.setState({ term: event.target.value }) } 
+					// rather than calling directly to the SearchBar props,
+					// call a separate method (below)
+					onChange={ event => this.onInputChange(event.target.value) }
 				/>
 				<br/>
-			</div>
-		); 
+			</section>
+		);
 	};
-	
+
+	// I keep switching between 'term' and 'keyword' which is
+	// not great practise but for now it helps me to see
+	// what I'm doing a bit better.
+
+	// This method sets the state of this SearchBar component,
+	// and also calls back to the property onSearchTermChange,
+	// which in turn calls the app's method "performVideoSearch"
+	onInputChange(keyword){
+		this.setState( {keyword} );
+		this.props.onSearchTermChange(keyword);
+	};
+
 }
 
 export default SearchBar;

@@ -27,29 +27,35 @@ class App extends Component {
 
 	constructor(props) {
 		super(props);
-		
+
 		this.state = {
 			videos: [],
 			selectedVideo: null
 		};
-		
-		YTSearch( {key: API_KEY, term: 'jayda crochet granny square'}, (videos) => {
-			this.setState({ 
+
+		this.performVideoSearch('dressmaking leggings');
+	};
+
+	// Youtube API search is now contained in its own method
+	performVideoSearch(keyword) {
+		YTSearch( {key: API_KEY, term: keyword}, (videos) => {
+			this.setState({
 				videos: videos,
 				selectedVideo: videos[0]
 			});
-		} );
-		
+		});
 	};
-	
+
+	// SearchBar has the property 'onSearchTermChange' which we can call back
+	// to when the input change event fires
 	render() {
 		return (
 			<section>
-				<SearchBar />
+				<SearchBar onSearchTermChange={term => this.performVideoSearch(term)} />
 				<VideoDetail video={this.state.selectedVideo} />
-				<VideoList 
+				<VideoList
 					onVideoSelect={ selectedVideo => this.setState({selectedVideo}) }
-					videos={this.state.videos} 
+					videos={this.state.videos}
 				/>
 			</section>
 		);
