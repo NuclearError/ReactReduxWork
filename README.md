@@ -1,4 +1,4 @@
-# Working through a React-Redux tutorial 
+# Working through a React-Redux tutorial
 
 This repo contains work that has been done while following along the React-Redux tutorial provided by Stephen Grider on the Udemy platform. The original readme for Stephen Grider's tutorial repo is below.
 
