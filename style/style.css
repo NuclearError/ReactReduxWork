@@ -6,6 +6,25 @@ html, body {
 }
 
 .wrapper {
-  border: 1px solid green;
+  border: 1px solid #efefef;
   padding: 10px;
+}
+
+td, th {
+  vertical-align: middle !important;
+  text-align: center !important;
+}
+
+.input-group {
+  margin: 15px 0;
+}
+
+svg {
+  height: 75px;
+}
+
+/* google map stuff */
+td:first-of-type, td:first-of-type > div {
+  height: 125px;
+  width: 125px;
 }
