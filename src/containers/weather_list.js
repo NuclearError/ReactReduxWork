@@ -9,6 +9,7 @@ class WeatherList extends Component {
     return (
       <tr key={name}>
         <td>{name}</td>
+        <td></td>
       </tr>
     );
   }
@@ -32,5 +33,15 @@ class WeatherList extends Component {
   }
 }
 
-const mapStateToProps = ({weather}) => ({weather});
+/*
+function mapStateToProps(state) {
+  return { weather: state.weather };
+}
+*/
+  
+function mapStateToProps({ weather }) {
+  return { weather }; // same as { weather: weather } --> es6 syntax
+  // basically if your key and value have the same name, this works
+}
+
 export default connect(mapStateToProps)(WeatherList);
